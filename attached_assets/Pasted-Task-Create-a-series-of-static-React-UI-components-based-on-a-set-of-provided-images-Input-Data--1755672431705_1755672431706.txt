@@ -1,0 +1,47 @@
+Task: Create a series of static React UI components based on a set of provided images.
+
+Input Data: A zipped file containing multiple images of presentation slides.
+
+Output Requirements:
+
+Framework: React + JavaScript.
+
+Styling: Tailwind CSS.
+
+Component Structure:
+
+Generate a separate, self-contained React functional component for each image.
+
+Each component must be a static UI presentation, containing only the code necessary to render the visual elements from the corresponding image. Avoid generating any interactive logic, state (useState), or side effects (useEffect).
+
+Visual Replication:
+
+Background: Each component's root element must have a solid black background.
+
+Layout: Accurately replicate the layout, including the relative positioning, alignment, spacing (padding, margin), and size of all elements (text, shapes, images).
+
+Text and Fonts:
+
+Analyze and extract all text content from the images using OCR.
+
+Replicate the exact font family, size, weight (e.g., bold), and style (e.g., italic) for all text elements.
+
+Colors: Analyze and replicate the exact color codes (hexadecimal values) for all text, shapes, and other visual elements.
+
+Workflow Instructions:
+
+Image Processing: Use computer vision techniques to deconstruct each image into its fundamental UI elements (text blocks, shapes, images, icons).
+
+Element Analysis: For each identified element, perform a detailed analysis to extract its properties:
+
+For text: Content, font, size, weight, and color.
+
+For shapes/icons: Geometry (size, position), and fill/stroke colors.
+
+Code Translation: Translate the analyzed properties into appropriate React JSX and Tailwind CSS classes.
+
+Structure the code using a combination of divs with flex or grid for layout, reflecting the spatial relationships of the original image.
+
+Apply the extracted colors, fonts, and sizes using Tailwind CSS utility classes. Use inline styling or a custom Tailwind config extension if a specific color or font is not available in the default utility set.
+
+File Naming: Name each generated component file logically (e.g., Slide1.jsx, Slide2.jsx).
