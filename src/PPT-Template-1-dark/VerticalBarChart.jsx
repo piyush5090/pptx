@@ -1,19 +1,18 @@
 import React from 'react';
 
 function VerticalBarChart({ slideData }) {
-  // Fallback data in case slideData is not passed
-  // const {
-  //   heading = "Transformational vs Transactional Leadership",
-  //   subheading = "Comparison of key leadership behaviors (0–100 scale)",
-  //   pageNumber = 1,
-  //   chartData = [
-  //     { label: 'Idealized Influence', value: 85 },
-  //     { label: 'Inspirational Motivation', value: 90 },
-  //     { label: 'Intellectual Stimulation', value: 80 },
-  //     { label: 'Individualized Consideration', value: 88 },
-  //     { label: 'Contingent Reward', value: 65 },
-  //   ]
-  // } = slideData || {};
+  const {
+    heading = "Transformational vs Transactional Leadership",
+    subheading = "Comparison of key leadership behaviors (0–100 scale)",
+    pageNumber = 1,
+    chartData = [
+      { label: 'Idealized Influence', value: 85 },
+      { label: 'Inspirational Motivation', value: 90 },
+      { label: 'Intellectual Stimulation', value: 80 },
+      { label: 'Individualized Consideration', value: 88 },
+      { label: 'Contingent Reward', value: 65 },
+    ]
+  } = slideData || {};
 
   // Fixed Tailwind color classes (rotate if needed)
   const barColors = [
