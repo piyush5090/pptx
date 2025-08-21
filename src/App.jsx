@@ -1,29 +1,27 @@
 
-import './App.css'
-import FourCardGrid from "./PPT-Template-1-dark/FourCardGrid"
-import TitledFeatureGrid from "./PPT-Template-1-dark/TitledFeatureGrid"
-import TitleTextAndImage from "./PPT-Template-1-dark/TitleTextAndImage"
-import TitledListWithFooter from "./PPT-Template-1-dark/TitledListWithFooter"
-import TitledIconGrid from "./PPT-Template-1-dark/TitledIconGrid"
-import HorizontalBarList from "./PPT-Template-1-dark/HorizontalBarList"
-import ImageTextLayout from "./PPT-Template-1-dark/ImageTextLayout"
-import Timeline from "./PPT-Template-1-dark/Timeline"
-import VerticalBarChart from "./PPT-Template-1-dark/VerticalBarChart"
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { store } from './store/store';
+import UploadPage from './pages/UploadPage';
+import PresentationPage from './pages/PresentationPage';
+import ErrorBoundary from './components/ErrorBoundary';
+import './App.css';
 
 export default function App() {
-
   return (
-    <div className="min-h-screen">
-      <FourCardGrid/>
-      <TitledFeatureGrid />
-      <TitleTextAndImage />
-      <TitledListWithFooter />
-      <TitledIconGrid />
-      <HorizontalBarList />
-      <ImageTextLayout />
-      <Timeline />
-      <VerticalBarChart />
-
-    </div>
-  )
+    <Provider store={store}>
+      <ErrorBoundary>
+        <Router>
+          <div className="min-h-screen bg-gray-900">
+            <Routes>
+              <Route path="/" element={<UploadPage />} />
+              <Route path="/presentation" element={<PresentationPage />} />
+              <Route path="/presentation/:slideIndex" element={<PresentationPage />} />
+            </Routes>
+          </div>
+        </Router>
+      </ErrorBoundary>
+    </Provider>
+  );
 }
