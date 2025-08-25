@@ -10,7 +10,7 @@ dotenv.config(); // load .env file
 
 // --- Timestamped logger for consistent logging ---
 function log(message) {
-  const now = new Date().toISOString().replace("T", " ").replace(/\..+/, ""); // YYYY-MM-DD HH:MM:SS
+  const now = new Date().toLocaleString("en-GB", { hour12: false }).replace(",", "");
   console.log(`[${now}] ${message}`);
 }
 
